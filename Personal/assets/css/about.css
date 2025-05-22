@@ -1,0 +1,230 @@
+body{
+    font-family: sans-serif;
+    color: #333;
+    
+
+}
+section .about-section{
+    padding: 40px 0;
+    background-color: #f9f9f9;
+}
+.about-section .container{
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+.about-section .col-lg-4{
+    text-align: center;
+}
+.about-section .img-fluid{
+    max-width: 100%;
+    height: 530px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01);
+}
+.about-section .col-lg-8 .content{
+    padding-left: 30px;
+}
+.about-section h2{
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 2.2em;
+}
+.about-section .fst-italic{
+    color: #777;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.about-section .col-lg-8 .content ul li{
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    
+}
+.about-section .col-lg-8.content ul li strong{
+    font-weight: bold;
+    color: #555;
+    width: 120px;
+    display: inline-block;
+}
+.about-section .col-lg-8.content ul li span{
+    color: #333;
+    flex-grow: 1;
+}
+.about-section .col-lg-8.content ul li:nth-child(3) strong{
+    margin-top: 8px;
+}
+.about-section .col-lg-8.content ul li:nth-child(3) span{
+    display: block;
+}
+.about-section .py-3{
+    line-height: 1.7;
+    color: #666;
+}
+.breadcrumbs{
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #eee;
+    border-radius: 5px;
+}
+.breadcrumbs .container{
+    padding: 0 20px;
+}
+.breadcrumbs ol{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.breadcrumbs li{
+    margin-right: 10px;
+}
+.breadcrumbs li:last-child{
+    margin-right: 0;
+}
+.breadcrumbs a{
+    text-decoration: none;
+    color: rgb(5, 238, 255);
+}
+.breadcrumbs .current{
+    color: #333;
+    font-weight: bold;
+}
+page-title{
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.heading h1 {
+    color: #007bff;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+.heading p{
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+.about-section .row > div {
+    margin-bottom: 20px;
+}
+@media(min-width: 992px){
+    .about-section .row>div {
+        margin-bottom: 0;
+    }
+    .about-section .col-lg-4{
+        padding-right: 30px;
+    }
+    .about-section .col-lg-8.content{
+        padding-left: 30px;
+    }
+}
+.about-section .content ul {
+    list-style: none;
+    padding: 0;
+    display: grid ;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px 20px;
+}
+.about-section .content ul li {
+    display: flex;
+    align-items: baseline;
+}
+.about-section .content ul li i{
+    color: #007bff;
+    margin-right: 8px;
+    font-size: 1em;
+    width: auto;
+    text-align: left
+    ;
+}
+.about-section .content ul li strong{
+    font-weight: bold;
+    color: #555;
+    width: auto;
+
+    margin-right: 5px;
+}
+.about-section .content ul li span{
+    color: #333;
+    
+}
+.skills .progress {
+    height: 60px;
+    display: block;
+    background: none;
+    border-radius: 0;
+  }
+  
+  .skills .progress .skill {
+    color: var(--heading-color);
+    padding: 5px;
+    margin: 0 0 6px 0;
+    text-transform: uppercase;
+    display: block;
+    font-weight: 100px;
+    font-family: var(--heading-font);
+    
+  }
+  
+  .skills .progress .skill .val {
+    float: right;
+    font-style: normal;
+  }
+  
+  .skills .progress-bar-wrap {
+    background: color-mix(in srgb, var(--default-color), transparent 90%);
+    height: 20px;
+  }
+  
+  .skills .progress-bar {
+    width: 2px;
+    height: 20px;
+    transition: 0.9s;
+    background-color: var(--accent-color);
+  }
+  
+  /*--------------------------------------------------------------
+  # Interests Section
+  --------------------------------------------------------------*/
+  .interests .features-item {
+    background-color: var(--surface-color);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    transition: 0.3s;
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+    position: relative;
+  }
+  
+  .interests .features-item i {
+    font-size: 32px;
+    padding-right: 10px;
+    line-height: 0;
+  }
+  
+  .interests .features-item h3 {
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-size: 16px;
+  }
+  
+  .interests .features-item h3 a {
+    color: var(--heading-color);
+    transition: 0.3s;
+  }
+  
+  .interests .features-item:hover {
+    border-color: var(--accent-color);
+  }
+  
+  .interests .features-item:hover h3 a {
+    color: var(--accent-color);
+  }
