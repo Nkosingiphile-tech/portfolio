@@ -30,7 +30,8 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
   <link rel="stylesheet" href="/Personal/assets/css/mobilefile.css" class="style">
- 
+ <link rel="stylesheet" href="/Personal/assets/css/footer.css">
+ <link rel="stylesheet" href="/Personal/assets/css/navmenu.css">
 </head>
 
 <body class="index-page">
@@ -48,18 +49,33 @@
         </style></span></h1>
       </a>
       <i class='bx bx-menu' id="menu-icon"></i>
-      <nav id="navmenu" class="navmenu">
-        <ul>  
+     <span id="openNav" class="nav-toggle-btn"><i class="fa fa-bars"></i></span>
+      <nav id="slideNav" class="slide-nav">
+        <span id="closeNav" class="close-btn"><i class="fa fa-arrow-left"></i></span>
+        <ul>
           <li><a href="index.html"><i class="fa-solid fa-house-user"></i>Home</a></li>    
           
           <li><a href="about.html" ><i class="fa-solid fa-address-card"></i>About</a></li>
           <li><a href="Qualifications.html" ><i class="fa-solid fa-graduation-cap"></i>Qualifications</a></li>
           <li><a href="services.html"><i class="fa-brands fa-servicestack"></i>Services</a></li>
+          <li><a href="project.html"><i class="fa-solid fa-briefcase"></i>Projects</a></li>
           <li><a href="contact.html"><i class="fa-solid fa-tower-cell"></i>Contact</a></li>
-         
+          
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
+      <!-- Desktop Navigation -->
+<nav id="navmenu">
+  <ul>
+    <li><a href="index.html"><i class="fa-solid fa-house-user"></i>Home</a></li>
+    <li><a href="about.html"><i class="fa-solid fa-address-card"></i>About</a></li>
+    <li><a href="Qualifications.html"><i class="fa-solid fa-graduation-cap"></i>Qualifications</a></li>
+    <li><a href="services.html"><i class="fa-brands fa-servicestack"></i>Services</a></li>
+    <li><a href="project.html"><i class="fa-solid fa-briefcase"></i>Projects</a></li>
+    <li><a href="contact.html"><i class="fa-solid fa-tower-cell"></i>Contact</a></li>
+  </ul>
+</nav>
+
 
     </div>
   </header>
@@ -124,164 +140,45 @@
   </main>
 
   <footer class="main-footer">
-    <div class="footer-container">
-      <div class="footer-column">
-        <h3>More Info</h3>
-        <p>Summerstrand<br>Port Elizabeth</p>
-        <p><strong>Phone:</strong> +27 73 403 5968<br><strong>Email:</strong> s228012260@mandela.ac.za</p>
-        <div class="social-links">
-          <a href="#"><i class="bx bxl-facebook"></i></a>
-          <a href="#"><i class="bx bxl-twitter"></i></a>
-          <a href="#"><i class="bx bxl-skype"></i></a>
-          <a href="#"><i class="bx bxl-instagram"></i></a>
-        </div>
-      </div>
-  
-      <div class="footer-column">
-        <h4>Useful Links</h4>
-        <ul>
-          <li><i class="bx bx-chevron-right"></i> <a href="index.html">Home</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="about.html">About Me</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="services.html">Services</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="Qualifications.html">Qualification</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-  
-      <div class="footer-column">
-        <h4>My Services</h4>
-        <ul>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Mobile App Development</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Full-Skack Development</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Database Management</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">Custom Software Solutions</a></li>
-        </ul>
-      </div>
-  
-     
-    </div>
-  
-    <div class="footer-bottom">
-      <div class="copyright">
-        &copy; Copyright <strong>Nkosingiphile</strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        Designed by <a href="index.html">NkosieTech</a>
+  <div class="footer-container">
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>Summerstrand, Port Elizabeth</p>
+      <p><strong>Phone:</strong> +27 73 403 5968</p>
+      <p><strong>Email:</strong> <a href="mailto:s228012260@mandela.ac.za">s228012260@mandela.ac.za</a></p>
+      <div class="footer-social">
+        <a href="#"><i class="bx bxl-facebook"></i></a>
+        <a href="#"><i class="bx bxl-twitter"></i></a>
+        <a href="#"><i class="bx bxl-skype"></i></a>
+        <a href="#"><i class="bx bxl-instagram"></i></a>
       </div>
     </div>
-  </footer>
-  <style>
-  .main-footer {
-    background-color: black; /* Dark blue background */
-    color: #fff; /* White text */
-    padding: 40px 0; /* Adjust vertical padding */
-    font-size: 1.5em;
-  }
-  
-  .footer-container {
-    display: flex;
-    justify-content: space-around; /* Distribute columns evenly */
-    flex-wrap: wrap; /* Allow columns to wrap */
-    max-width: 1200px; /* Limit container width */
-    margin: 0 auto; /* Center the container */
-    padding: 0 20px; /* Add horizontal padding to the container */
-  }
-  
-  .footer-column {
-    padding: 0 15px;
-    margin-bottom: 30px;
-    width: calc(25% - 30px); /* Four columns with spacing */
-    box-sizing: border-box;
-  }
-  
-  @media (max-width: 992px) {
-    .footer-column {
-      width: calc(50% - 30px); /* Two columns on medium screens */
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .footer-column {
-      width: 100%; /* Single column on small screens */
-    }
-  }
-  
-  .footer-column h3,
-  .footer-column h4 {
-    color: #fff;
-    font-size: 2.2em;
-    margin-bottom: 15px;
-    font-weight: bold;
-  }
-  
-  .footer-column p {
-    line-height: 1.6;
-    margin-bottom: 15px;
-  }
-  
-  .footer-column .social-links a {
-    font-size: 2.5em;
-    margin-right: 10px;
-    color: #fff;
-    text-decoration: none;
-    opacity: 0.8;
-    transition: opacity 0.3s ease-in-out;
-  }
-  
-  .footer-column .social-links a:hover {
-    opacity: 1;
-  }
-  
-  .footer-column ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .footer-column ul li {
-    padding-bottom: 8px;
-  }
-  
-  .footer-column ul li a {
-    color: #eee;
-    text-decoration: none;
-    opacity: 0.8;
-    transition: opacity 0.3s ease-in-out;
-  }
-  
-  .footer-column ul li a:hover {
-    opacity: 1;
-    color: var(--main-color);
-  }
-  
-  .footer-column ul li i {
-    margin-right: 5px;
-    color: #ccc;
-  }
-  
- 
-  .footer-column form button:hover {
-    background-color: #0056b3;
-  }
-  
-  .footer-bottom {
-    background-color: rgba(29, 28, 28, 0.897); /* Darker blue bottom bar */
-    padding: 15px 20px;
-    text-align: center;
-    font-size: 0.85em;
-  }
-  
-  .footer-bottom .copyright {
-    margin-bottom: 5px;
-  }
-  
-  .footer-bottom a {
-    color: #0080ff;
-    text-decoration: none;
-  }
-
-  </style>
+    <div class="footer-col">
+      <h4>Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Me</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="Qualifications.html">Qualification</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#">Mobile App Development</a></li>
+        <li><a href="#">Web Development</a></li>
+        <li><a href="#">Full-Stack Development</a></li>
+        <li><a href="#">Database Management</a></li>
+        <li><a href="#">Custom Software</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; Nkosingiphile. All Rights Reserved.</span>
+    <span class="footer-credit">Designed by <a href="index.html">NkosieTech</a></span>
+  </div>
+</footer>
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -303,6 +200,15 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 <script src="assets/js/mobile.js"></script>
+<script>
+  document.getElementById("openNav").onclick = function() {
+    document.getElementById("slideNav").style.width = "260px";
+  };
+  document.getElementById("closeNav").onclick = function() {
+    document.getElementById("slideNav").style.width = "0";
+  };
+</script>
+<script src="/Personal/assets/js/mobilee2.js"></script>
 </body>
 
 </html>

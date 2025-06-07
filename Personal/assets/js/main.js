@@ -21,9 +21,9 @@
   
       // Check if current page matches the link
       if (linkPath === currentPage || (currentPage === '' && linkPath === 'index.html')) {
-        link.classList.add('active'); // Add active class
+        link.classList.add('active'); 
       } else {
-        link.classList.remove('active'); // Remove active class
+        link.classList.remove('active'); 
       }
     });
   });
