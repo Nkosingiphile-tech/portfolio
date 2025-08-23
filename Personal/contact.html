@@ -11,6 +11,8 @@
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -155,12 +157,7 @@
           </div><!-- End Info Item -->
 
           <div class="responsive-map">
-  <iframe 
-    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBwS-pC01vm475EE29_oOUt_BXqsJgCfy4&q=-33.9936974,25.6765272"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
+  <div id="map"></div>
 </div>
         <form  action="https://api.web3forms.com/submit"  method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="600">
           <div class="row gy-4">
@@ -298,7 +295,18 @@
     <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
 
- 
+ <script>
+   var lat = -33.993206;
+   var lon = -25.676372;
+
+   var map = L.map('map').setView([lat, lon], 13);
+
+   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/">
+     OpenStreetMap</a>'}).addTo(map);
+   L.marker([lat, lon]).addTo(map)
+       .bindPopup("This is my location.")
+       .openPopup();
+ </script>
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 <script>
