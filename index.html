@@ -134,7 +134,29 @@
 
 
   </main>
+  <div id="ai-chat-widget">
+    <div id="chat-box" class="hidden">
+        <div id="chat-header">
+            <span>AI Assistant</span>
+            <button id="close-chat">&times;</button>
+        </div>
+        
+        <div id="chat-messages">
+            <div class="message ai-message">
+                Hello! You can ask me anything you want to know about Nkosingiphile.
+            </div>
+        </div>
+        
+        <div id="chat-input-area">
+            <input type="text" id="user-input" placeholder="Type your question..." />
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
 
+    <button id="ai-logo-btn" title="Ask me about Nkosingiphile!">
+        <img src="Personal/roobot.png" id="ai-logo-img" alt="AI Logo" />
+    </button>
+</div>
   <footer class="main-footer">
   <div class="footer-container">
     <div class="footer-col">
@@ -203,6 +225,80 @@
   document.getElementById("closeNav").onclick = function() {
     document.getElementById("slideNav").style.width = "0";
   };
+  const aiLogoBtn = document.getElementById('ai-logo-btn');
+const chatBox = document.getElementById('chat-box');
+const closeChatBtn = document.getElementById('close-chat');
+const sendBtn = document.getElementById('send-btn');
+const userInput = document.getElementById('user-input');
+const chatMessages = document.getElementById('chat-messages');
+
+// 1. Open and close the chat box
+aiLogoBtn.addEventListener('click', () => {
+    chatBox.classList.remove('hidden');
+});
+
+closeChatBtn.addEventListener('click', () => {
+    chatBox.classList.add('hidden');
+});
+
+// 2. Add messages to the screen and auto-scroll
+function appendMessage(text, sender) {
+    const messageDiv = document.createElement('div');
+    messageDiv.classList.add('message');
+    messageDiv.classList.add(sender === 'user' ? 'user-message' : 'ai-message');
+    
+    // Using innerHTML so the AI can return bold text or bullet points safely
+    messageDiv.innerHTML = text; 
+    
+    chatMessages.appendChild(messageDiv);
+    
+    // Magic line that forces the box to scroll down to the newest message!
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// 3. Send the message to your Python Backend
+async function sendMessage() {
+    const text = userInput.value.trim();
+    if (!text) return;
+
+    // Show what the user typed
+    appendMessage(text, 'user');
+    userInput.value = ''; // clear the input box
+
+    // Show a loading indicator
+    appendMessage("...", "ai");
+    const typingIndicator = chatMessages.lastChild;
+
+    try {
+        // Send data to your Python server (make sure app.py is running!)
+        const response = await fetch('http://127.0.0.1:5000/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ message: text })
+        });
+
+        const data = await response.json();
+        
+        // Remove the "..." loading indicator
+        chatMessages.removeChild(typingIndicator);
+
+        // Display the AI's actual response
+        if (data.response) {
+            appendMessage(data.response, 'ai');
+        } else {
+            appendMessage("Oops, something went wrong.", 'ai');
+        }
+    } catch (error) {
+        chatMessages.removeChild(typingIndicator);
+        appendMessage("Error: Could not connect to the server. Is Python running?", 'ai');
+    }
+}
+
+// 4. Trigger send on button click or 'Enter' key
+sendBtn.addEventListener('click', sendMessage);
+userInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') sendMessage();
+});
 </script>
 <script src="Personal/assets/js/mobilee2.js"></script>
 </body>
