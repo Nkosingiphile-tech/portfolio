@@ -243,7 +243,7 @@ h6 {
 
 /* Chat Header */
 #chat-header {
-    background-color: #007bff;
+    background-color: black;
     color: white;
     padding: 12px;
     display: flex;
@@ -1156,7 +1156,7 @@ section{
 }
 #ai-logo-btn {
     background-color: transparent; /* Changed from #007bff */
-    padding: 0; /* Removes extra space so the image fills the edge */
+    padding: 0; 
     border: none;
     border-radius: 50%;
     width: 60px;
